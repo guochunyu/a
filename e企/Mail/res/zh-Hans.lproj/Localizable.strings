@@ -1,0 +1,33 @@
+/* 
+  LocalizedString.strings
+  EnterpriseMail
+
+  Created by 陆广庆 on 14/12/8.
+  Copyright (c) 2014年 陆广庆. All rights reserved.
+*/
+
+"app.confirm" = "确定";
+"app.cancel" = "取消";
+"app.delete" = "删除";
+"app.save" = "保存";
+"app.unsave" = "不保存";
+
+"tabbar.mail.act" = "邮箱";
+
+"MailActAdd.email.empty" = "请输入邮箱";
+"MailActAdd.password.empty" = "请输入邮箱密码";
+"MailActAdd.email.exist" = "该邮箱已存在";
+"MailActAdd.email.format" = "邮箱格式错误";
+
+"MailDetail.tips.format" = "%@发送至%@";
+"MailDetail.tips.me" = "我";
+
+"MailDetail.reply" = "回复";
+"MailDetail.replyAll" = "回复所有人";
+"MailDetail.transmit" = "转发";
+"MailDetail.delete" = "是否删除该邮件?";
+"MailDetail.save" = "是否保存到草稿?";
+"MailDetail.delete" = "是否删除该邮件?";
+"MailDetail.nosubject" = "无主题";
+
+"photo.in.phone.rest.count" = "您还能选择%d张照片";

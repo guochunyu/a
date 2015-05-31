@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="1ca-th-hWO">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--通讯录-->
+        <scene sceneID="mFE-Sf-OOM">
+            <objects>
+                <tableViewController id="irZ-35-Hvb" customClass="AddFromContact" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="通讯录" id="vKN-W9-psD"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="frT-e6-nWT" id="fb5-mE-irY"/>
+                        <segue destination="5ww-1e-Dt0" kind="push" identifier="pushGroupaddressbook" id="dgc-tk-xSD"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Set-MF-Oun" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="frT-e6-nWT">
+                    <connections>
+                        <outlet property="delegate" destination="irZ-35-Hvb" id="hNu-cv-sKl"/>
+                        <outlet property="searchContentsController" destination="irZ-35-Hvb" id="IUE-M7-QF9"/>
+                        <outlet property="searchResultsDataSource" destination="irZ-35-Hvb" id="M6U-1r-zK6"/>
+                        <outlet property="searchResultsDelegate" destination="irZ-35-Hvb" id="8Qt-TW-Gix"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="451" y="-98"/>
+        </scene>
+        <!--Add From GroupVC-->
+        <scene sceneID="Ffd-O8-sQV">
+            <objects>
+                <tableViewController id="5ww-1e-Dt0" customClass="addFromGroupVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="L4Y-vD-Fal">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iJZ-sv-d16">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iJZ-sv-d16" id="PQR-PX-lA5">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5ww-1e-Dt0" id="AfR-te-cIg"/>
+                            <outlet property="delegate" destination="5ww-1e-Dt0" id="tRu-xr-Wiw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Gg7-Aw-Sz4"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="R3O-Aw-VCJ" id="8k3-Xt-iNQ"/>
+                        <segue destination="oUg-QQ-AaI" kind="push" identifier="pushGroupaddressbook" id="gsL-Xz-Dl9"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UPD-CJ-jkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController searchResultsTitle="" id="R3O-Aw-VCJ">
+                    <connections>
+                        <outlet property="delegate" destination="5ww-1e-Dt0" id="MMT-Zz-Rfq"/>
+                        <outlet property="searchContentsController" destination="5ww-1e-Dt0" id="8Ag-Sm-YKi"/>
+                        <outlet property="searchResultsDataSource" destination="5ww-1e-Dt0" id="2Yw-lz-BrC"/>
+                        <outlet property="searchResultsDelegate" destination="5ww-1e-Dt0" id="LVL-aE-veH"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="847" y="-98"/>
+        </scene>
+        <!--NavigationVC AddID-->
+        <scene sceneID="d1v-lP-h7j">
+            <objects>
+                <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="1ca-th-hWO" customClass="NavigationVC_AddID" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wHI-WZ-w6R">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="iJy-6y-F1R">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="irZ-35-Hvb" kind="relationship" relationship="rootViewController" id="aJz-8F-hr8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fUW-40-WTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-83" y="-98"/>
+        </scene>
+        <!--Add From GroupVC-->
+        <scene sceneID="k0D-mI-qLQ">
+            <objects>
+                <tableViewController id="oUg-QQ-AaI" customClass="addFromGroupVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0D7-4V-C7t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0d4-TL-1cI">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0d4-TL-1cI" id="d0d-Gf-kmo">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oUg-QQ-AaI" id="nPx-12-WJz"/>
+                            <outlet property="delegate" destination="oUg-QQ-AaI" id="eg4-J5-Kla"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="S1f-Qz-Xe2"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="RX9-6T-NIG" id="XkU-hJ-vLa"/>
+                        <segue destination="5ww-1e-Dt0" kind="push" identifier="pushGroupaddressbook" id="1B7-D4-LjO"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ddk-le-oE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="RX9-6T-NIG">
+                    <connections>
+                        <outlet property="delegate" destination="oUg-QQ-AaI" id="MJc-CR-0vQ"/>
+                        <outlet property="searchContentsController" destination="oUg-QQ-AaI" id="n9e-VE-LMC"/>
+                        <outlet property="searchResultsDataSource" destination="oUg-QQ-AaI" id="i9J-To-IeO"/>
+                        <outlet property="searchResultsDelegate" destination="oUg-QQ-AaI" id="zXF-gt-MV5"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="847" y="629"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="1B7-D4-LjO"/>
+    </inferredMetricsTieBreakers>
+</document>

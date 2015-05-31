@@ -1,0 +1,18 @@
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "GnA-cu-KqK"; */
+"GnA-cu-KqK.normalTitle" = "Button";
+
+/* Class = "IBUITextField"; accessibilityHint = "gggg"; ObjectID = "IMq-my-scD"; */
+"IMq-my-scD.accessibilityHint" = "gggg";
+
+/* Class = "IBUITextField"; placeholder = "请输入手机号"; ObjectID = "IMq-my-scD"; */
+"IMq-my-scD.placeholder" = "请输入手机号";
+
+/* Class = "IBUIButton"; normalTitle = "忘记密码"; ObjectID = "fdg-p3-mpr"; */
+"fdg-p3-mpr.normalTitle" = "忘记密码";
+
+/* Class = "IBUITextField"; placeholder = "请输入动态密码"; ObjectID = "qmD-yh-EBe"; */
+"qmD-yh-EBe.placeholder" = "请输入动态密码";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "v9W-gp-MOl"; */
+"v9W-gp-MOl.normalTitle" = "Button";

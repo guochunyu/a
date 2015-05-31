@@ -1,0 +1,212 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "HttpRequstUrl.h"
+    #import "e企-Swift.h"
+    #import "QFXmppManager.h"
+    #import "UserModel.h"
+    #import "MessageModel.h"
+    #import "AppDelegate.h"
+//放在上边就会报错。。。。
+    #import "AFNetworking.h"
+
+    #import "FMDatabaseQueue.h"
+
+    #import "FMDatabase.h"
+    #import "UIImageView+WebCache.h"
+    #import "AFClient.h"
+    #import "DataToDict.h"
+    #import "SocketManage.h"
+    #import "GetArcImageName.h"
+    #import "UIImage+Scaling.h"
+    #import "LogRecord.h"
+
+    #import "DDLog.h"
+    #import "HDDLog.h"
+
+    #import "ConstantObject.h"
+    #import "UIMyLabel.h"
+    #import "UIMyHudView.h"///<带有hud的view
+    #import "NSString+FilePath.h"
+    #import "NSDate+string.h"
+    #import "SqliteDataDao.h"
+    #import "DownManage.h"
+
+    #import "UIView+Toast.h"
+    #import "UIColor+Ext.h"
+    //#import "MacroDefines.h"
+//音视频接入
+#import "zmf.h"
+#import "mtc_api.h"
+
+#endif
+
+#define E_APP_KEY  @"#993300vv"
+
+//版本号第一个数字
+#define iosSystemVersion [[[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."] objectAtIndex:0] intValue]
+
+//判断是否是ios7
+#define IS_IOS_8 ([[[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."] objectAtIndex:0] intValue]>=8)
+
+//判断是否是ios7
+#define IS_IOS_7 ([[[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."] objectAtIndex:0] intValue]>=7)
+
+
+//判断是否是ios6以上
+#define IS_IOS_6 ([[[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."] objectAtIndex:0] intValue]>=6)
+
+#define IS_Height_4 ([[UIScreen mainScreen] currentMode].size.height*0.5>550)
+
+//版本号，version && build
+
+#define appBuild [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey]
+#define appVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define nowVersion [NSString stringWithFormat:@"%@-%@",appVersion,appBuild]
+
+//离线消息缓存文件
+#define offlineMessagefile [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0]stringByAppendingPathComponent:@"offlineMessage.plist"]
+
+//聊天气泡相关
+//颜色
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+/*==============================
+=====和企录iOS字体颜色值统一标准库=====
+================================*/
+// 背景色
+#define bgcor1 UIColorFromRGB(0xffffff)
+#define bgcor2 UIColorFromRGB(0xf8f8f8)
+#define bgcor3 UIColorFromRGB(0xededed)
+
+// 文字色
+#define cor1 UIColorFromRGB(0x333333)
+#define cor2 UIColorFromRGB(0x666666)
+#define cor3 UIColorFromRGB(0x999999)
+#define cor4 UIColorFromRGB(0xbbbbbb)
+#define cor5 UIColorFromRGB(0xffffff)
+#define cor6 UIColorFromRGB(0x408af4)
+
+// 分割线颜色
+#define linecor1 UIColorFromRGB(0xdcdcdc)
+
+// 字号
+#define size19 [UIFont systemFontOfSize:19]
+#define size16 [UIFont systemFontOfSize:16]
+#define size15 [UIFont systemFontOfSize:15]
+#define size14 [UIFont systemFontOfSize:14]
+#define size12 [UIFont systemFontOfSize:12]
+#define size11 [UIFont systemFontOfSize:11]
+#define size10 [UIFont systemFontOfSize:10]
+
+//==============================
+ 
+#define now_http_str [NSString stringWithFormat:@"%@:%@:%d",HTTP_IP,HTTP_PORT,SOCKET_PORT]
+#define last_http_str [[NSUserDefaults standardUserDefaults] objectForKey:httpIp_last]
+
+#define selectPark_com @"###selectPart="///<分割app配置
+
+#define partition_service @"#partition_service_com.royasoft.ole#"///<分割服务号内容
+//登录获得session
+#define JSSIONID  @"jssionid"
+
+/*********lx通讯******/
+//是否更新过
+#define UPDATE @"update"
+//最新更新时间
+#define LATESTUPDATETIME @"latestUpdateTime"
+//保存通讯录
+#define ADDRESSMODEL @"addressModel"
+
+
+//颜色
+#define HEXCOLOR(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+//消息开关
+#define MESSAGESWITCH @"messageSwitch"
+//新消息提醒
+#define REMIND_MSG @"msgRemind"
+//通知显示消息详情
+#define SHOWMSGDETAILINFO @"msgDetailInfo"
+//新邮件提醒
+#define REMIND_EMAIL @"eMailRemind"
+//声音提醒
+#define REMIND_SOUND @"soundRemind"
+//震动提醒
+#define REMIND_SHAKE @"shakeRemind"
+//消息免打扰成员
+#define NO_DISTURB_MEMBER @"notDistureMember"
+//全天免打扰
+#define NO_DISTURB_DAY_AND_NIGHT @"allDay"
+//夜间免打扰
+#define NO_DISTURB_ONLY_NIGHT @"onlyLight"
+//关闭免打扰
+#define NO_DISTURB_CLOSED @"close"
+//免打扰起始时间
+#define NO_DISTURB_STARTTIME @"no_disturb_starttime"
+//免打扰终止时间
+#define NO_DISTURB_ENDTIME @"no_disturb_endtime"
+//消息推送
+#define PUSH_NOTIFICATION   @"product"  //develop  or product
+
+#define COFRENCE_ASSiSTANT @"main";  //main or branch
+//保存个人信息
+#define USERARRAY @"userarray"
+
+//上次记录的时间
+#define REMIND_LAST_TIME @"remind_last_time"
+
+#define updateHeadImage @"updateHeadImage"
+
+//#define writeLog(format,...NS_FORMAT_FUNCTION(1,2)) [[LogRecord sharedWriteLog] writeLog:format]
+
+//在release模式禁用nslog
+#ifndef __OPTIMIZE__
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...) {}
+#endif
+
+#define commanName @"我的收藏"  //常用联系人
+#define openfireName @"openfireName"  ///<openfire的名字
+#define default_headImage @"public_default_avatar_80" //默认头像
+#define BIGIN_LOGIN_IMAGE @"0-0Loading.png"//启动页面
+
+#define NOTIFICATION_READ @"markHasReadChatCount"
+#define NOTIFICATION_UNREAD @"markUnReadChatCount"//未读数目
+
+#define NOTIFICATION_HIDETABBAR @"notification_hideTabBar"  //隐藏tabBar
+#define NOTIFICATION_SHOWTABBAR @"notification_showTabBar"  //显示tabBar
+
+#define defaultHeadImage [UIImage imageNamed:@"public_default_avatar_80"]
+
+typedef enum {
+    FileTypeText = 1,//文字
+    FileTypeImage = 2,//图片
+    FileTypeAudio = 3,//声音
+    FileTypeVideo = 5,//视频
+} FileType;//文件类型
+
+
+// 色值
+#define COLOR_16HEX_LIGHT_BLUE_SET(HEXValue) [UIColor colorWithRed:((float)((HEXValue & 0xFF0000) >> 16))/255.0 green:((float)((HEXValue & 0xFF00) >> 8))/255.0 blue:((float)(HEXValue & 0xFF))/255.0 alpha:1.0] // 设置浅蓝色
+#define COLOR_16HEX_LIGHT_BLUE COLOR_16HEX_LIGHT_BLUE_SET(0xf5f5f5) // 灰色
+
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HIGHT [UIScreen mainScreen].bounds.size.height
+
+

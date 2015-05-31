@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Attachment" representedClassName="Attachment" syncable="YES">
+        <attribute name="charset" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="filepath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inlineAttachment" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="mimeType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="partType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="uniqueID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="email" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Email" inverseName="attachments" inverseEntity="Email" syncable="YES"/>
+    </entity>
+    <entity name="Email" representedClassName="Email" syncable="YES">
+        <attribute name="archiveType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="hasDeleted" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="hasReply" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="hasTransmit" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="htmlText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isFlag" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="isRead" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="messageID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plainText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sendType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EmailAccount" inverseName="email" inverseEntity="EmailAccount" syncable="YES"/>
+        <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attachment" inverseName="email" inverseEntity="Attachment" syncable="YES"/>
+        <relationship name="cc" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmailAddress" inverseName="cc" inverseEntity="EmailAddress" syncable="YES"/>
+        <relationship name="mainPart" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EmailPart" inverseName="email" inverseEntity="EmailPart" syncable="YES"/>
+        <relationship name="receivers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EmailAddress" inverseName="receivers" inverseEntity="EmailAddress" syncable="YES"/>
+        <relationship name="sender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EmailAddress" inverseName="sender" inverseEntity="EmailAddress" syncable="YES"/>
+    </entity>
+    <entity name="EmailAccount" representedClassName="EmailAccount" syncable="YES">
+        <attribute name="createTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pop3Host" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pop3Port" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="smtpHost" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smtpPort" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="email" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Email" inverseName="account" inverseEntity="Email" syncable="YES"/>
+    </entity>
+    <entity name="EmailAddress" representedClassName="EmailAddress" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cc" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Email" inverseName="cc" inverseEntity="Email" syncable="YES"/>
+        <relationship name="receivers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Email" inverseName="receivers" inverseEntity="Email" syncable="YES"/>
+        <relationship name="sender" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Email" inverseName="sender" inverseEntity="Email" syncable="YES"/>
+    </entity>
+    <entity name="EmailPart" representedClassName="EmailPart" syncable="YES">
+        <attribute name="charset" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inlineAttachment" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="mimeType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="partType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="uniqueID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="email" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Email" inverseName="mainPart" inverseEntity="Email" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Attachment" positionX="61" positionY="198" width="128" height="210"/>
+        <element name="Email" positionX="-324" positionY="153" width="128" height="345"/>
+        <element name="EmailAccount" positionX="-324" positionY="-54" width="128" height="163"/>
+        <element name="EmailAddress" positionX="115" positionY="72" width="128" height="120"/>
+        <element name="EmailPart" positionX="-126" positionY="-153" width="128" height="193"/>
+    </elements>
+</model>

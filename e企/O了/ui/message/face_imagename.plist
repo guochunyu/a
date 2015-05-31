@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>Expression_1@smile</string>
+	<string>Expression_2@happy</string>
+	<string>Expression_3@tooth</string>
+	<string>Expression_4@laughter</string>
+	<string>Expression_5@cry</string>
+	<string>Expression_6@thin</string>
+	<string>Expression_7@light</string>
+	<string>Expression_8@mad</string>
+	<string>Expression_9@clatter</string>
+	<string>Expression_10@awkward</string>
+	<string>Expression_11@shy</string>
+	<string>Expression_12@simper</string>
+	<string>Expression_13@sweat</string>
+	<string>Expression_14@flash</string>
+	<string>Expression_15@terrified</string>
+	<string>Expression_16@sinister</string>
+	<string>Expression_17@lol</string>
+	<string>Expression_18@loveliness</string>
+	<string>Expression_19@arrogance</string>
+	<string>Expression_20@sleepy</string>
+	<string>Expression_21@grim</string>
+	<string>Expression_22@tear</string>
+	<string>Expression_23@bud</string>
+	<string>Expression_24@sea</string>
+	<string>Expression_25@ill</string>
+	<string>Expression_26@vomit</string>
+	<string>Expression_27@lips</string>
+	<string>Expression_28@kiss</string>
+	<string>Expression_29@lust</string>
+	<string>Expression_30@love</string>
+	<string>Expression_31@cable</string>
+	<string>Expression_32@naughty</string>
+	<string>Expression_33@angel</string>
+	<string>Expression_34@tongue</string>
+	<string>Expression_35@stupid</string>
+	<string>Expression_36@grievance</string>
+	<string>Expression_37@however</string>
+	<string>Expression_38@speechless</string>
+	<string>Expression_39@monster</string>
+	<string>Expression_40@perturbation</string>
+	<string>Expression_41@glass</string>
+	<string>Expression_42@dizzy</string>
+	<string>Expression_43@blink</string>
+	<string>Expression_44@abuse</string>
+</array>
+</plist>

@@ -1,0 +1,100 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "HttpRequstUrl.h"
+
+
+    #import "QFXmppManager.h"
+    #import "UserModel.h"
+    #import "MessageModel.h"
+    #import "AppDelegate.h"
+//放在上边就会报错。。。。
+    #import "AFNetworking.h"
+#import "AFHTTPClient.h"
+
+#import "UIImageView+WebCache.h"
+#import "AFClient.h"
+#import "DataToDict.h"
+#import "SocketManage.h"
+#import "GetArcImageName.h"
+#endif
+
+//判断是否是ios7
+#define IS_IOS_7 ([[[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."] objectAtIndex:0] intValue]>=7)
+
+
+//判断是否是ios6以上
+#define IS_IOS_6 ([[[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."] objectAtIndex:0] intValue]>=6)
+
+#define IS_Height_4 ([[UIScreen mainScreen] currentMode].size.height*0.5>550)
+//聊天气泡相关
+//颜色
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
+/**
+ *  判断是否改变的
+ *
+ *  @param 返回yes为一样，no为不一样
+ *
+ *  @return
+ */
+#define now_http_str [NSString stringWithFormat:@"%@:%@:%d",HTTP_IP,HTTP_PORT,SOCKET_PORT]
+#define last_http_str [[NSUserDefaults standardUserDefaults] objectForKey:httpIp_last]
+#define is_http_change ([now_http_str isEqualToString:last_http_str])
+
+//颜色
+//#define HEXCOLOR(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+//新消息提醒
+#define REMIND_MSG @"msgRemind"
+//声音提醒
+#define REMIND_SOUND @"soundRemind"
+//震动提醒
+#define REMIND_SHAKE @"shakeRemind"
+//消息免打扰成员
+#define NO_DISTURB_MEMBER @"notDistureMember"
+//全天免打扰
+#define NO_DISTURB_DAY_AND_NIGHT @"allDay"
+//夜间免打扰
+#define NO_DISTURB_ONLY_NIGHT @"onlyLight"
+//关闭免打扰
+#define NO_DISTURB_CLOSED @"close"
+
+//上次记录的时间
+#define REMIND_LAST_TIME @"remind_last_time"
+
+#define updateHeadImage @"updateHeadImage"
+//隐藏侧边栏
+static NSString * const sideBarHide=@"sideBarHide";
+//左菜单单击
+static NSString * const leftButtonClick=@"leftButtonClick";
+
+static NSString * const shengyinxiazaiwancheng=@"shengyinxiazaiwancheng";//声音下载完成
+static NSString * const shipinxiazaiwancheng=@"shipinxiazaiwancheng";//视频图片下载完成
+
+static NSString * const offlinf_message_receive_finish=@"offlinf_message_receive_finish";//离线消息接收完成
+
+static NSString *const selectSiderDataModel =@"selectSiderDataModel";//侧边栏通知传递的key
+
+typedef enum {
+    FileTypeText = 1,//文字
+    FileTypeImage = 2,//图片
+    FileTypeAudio = 3,//声音
+    FileTypeVideo = 5,//视频
+} FileType;//文件类型

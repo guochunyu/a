@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--Image Pager Controller-->
+        <scene sceneID="bdm-d5-Mzq">
+            <objects>
+                <pageViewController storyboardIdentifier="ImagePagerController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="7d0-oD-Abj" customClass="ImagePagerController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ch4-ja-Xb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-522" y="-100"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f8y-PT-ddu">
+            <objects>
+                <navigationController storyboardIdentifier="AppWebRoot" id="hsy-wK-EP1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mlo-4Z-JnW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jf5-rU-rlI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-522" y="596"/>
+        </scene>
+        <!--App Web Controller-->
+        <scene sceneID="rWu-Yj-EPS">
+            <objects>
+                <viewController storyboardIdentifier="AppWebController" id="e1R-jF-sMB" customClass="AppWebController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pv1-1i-gy1"/>
+                        <viewControllerLayoutGuide type="bottom" id="5SW-8T-rCM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5m0-g9-dCz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JCD-eb-MhR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="e1R-jF-sMB" id="f8u-lQ-D2p"/>
+                                </connections>
+                            </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GMB-lr-mHN">
+                                <rect key="frame" x="150" y="274" width="37" height="37"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pXf-IU-ylj">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="0Ra-lh-WK8">
+                            <connections>
+                                <action selector="didCloseButtonClick:" destination="e1R-jF-sMB" id="RaL-S3-1UI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="iCloseButton" destination="0Ra-lh-WK8" id="e0J-oB-pJo"/>
+                        <outlet property="iWebProgress" destination="GMB-lr-mHN" id="xeJ-Hh-DMt"/>
+                        <outlet property="iWebView" destination="JCD-eb-MhR" id="r0U-jj-64X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gRJ-4e-Ivr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-112" y="596"/>
+        </scene>
+        <!--Image Pager Content Controller-->
+        <scene sceneID="5dT-Xv-fif">
+            <objects>
+                <viewController storyboardIdentifier="ImagePagerContentController" id="TrY-ZM-rhX" customClass="ImagePagerContentController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F90-i0-ybv"/>
+                        <viewControllerLayoutGuide type="bottom" id="9gZ-Tk-HMK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="STq-fr-pUV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YdK-vT-mwb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Eop-gw-Gup">
+                                <rect key="frame" x="142" y="265" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="QT0-8U-cMj">
+                                <rect key="frame" x="16" y="511" width="288" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="JIu-0w-JNL"/>
+                                    <constraint firstAttribute="height" constant="37" id="eXb-X8-tkN"/>
+                                </constraints>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9gZ-Tk-HMK" firstAttribute="top" secondItem="QT0-8U-cMj" secondAttribute="bottom" constant="20" id="Ayf-bB-QPc"/>
+                            <constraint firstAttribute="centerX" secondItem="QT0-8U-cMj" secondAttribute="centerX" id="wIN-Zt-2D4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="iImageTapGesture" destination="GEU-3Q-hGZ" id="zXo-ed-S2V"/>
+                        <outlet property="iLoadingProgress" destination="Eop-gw-Gup" id="dNh-Gr-iZ0"/>
+                        <outlet property="iOriginalImage" destination="YdK-vT-mwb" id="edB-hl-sia"/>
+                        <outlet property="iPageControl" destination="QT0-8U-cMj" id="R7v-8i-2jL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSP-wl-HBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="GEU-3Q-hGZ">
+                    <connections>
+                        <action selector="didImageTapped:" destination="TrY-ZM-rhX" id="hxy-dB-eir"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-112" y="-100"/>
+        </scene>
+        <!--我的相册-->
+        <scene sceneID="oTY-2a-s2n">
+            <objects>
+                <tableViewController storyboardIdentifier="PhotoAlbumsController" id="LjN-US-kHq" customClass="PhotoAlbumsController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="kkJ-7L-ZBW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PhotoAlbumCell" rowHeight="100" id="ldi-pn-fu6" customClass="PhotoAlbumCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ldi-pn-fu6" id="c6R-VV-PwV">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uam-1U-Mj6">
+                                            <rect key="frame" x="20" y="10" width="80" height="80"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的相册" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJg-aG-46X">
+                                            <rect key="frame" x="108" y="10" width="172" height="40"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POf-g0-9Qp">
+                                            <rect key="frame" x="108" y="50" width="172" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iAlbumCoverImage" destination="uam-1U-Mj6" id="4Rj-Kt-yZs"/>
+                                    <outlet property="iAlbumNameLabel" destination="NJg-aG-46X" id="oxR-uw-VDT"/>
+                                    <outlet property="iPhotoCountLabel" destination="POf-g0-9Qp" id="DMq-Ut-4O7"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LjN-US-kHq" id="maL-LQ-hQN"/>
+                            <outlet property="delegate" destination="LjN-US-kHq" id="LGW-rc-aY3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="我的相册" id="MbR-eK-bZ6"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VD8-EZ-BEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-126" y="-744"/>
+        </scene>
+        <!--Photo In Phone Controller-->
+        <scene sceneID="IjX-yx-R79">
+            <objects>
+                <collectionViewController storyboardIdentifier="PhotoInPhoneController" autoresizesArchivedViewToFullSize="NO" id="7ph-iO-YXa" customClass="PhotoInPhoneController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="3dw-Vz-ZI3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="1" id="IxP-iU-eNg">
+                            <size key="itemSize" width="103" height="103"/>
+                            <size key="headerReferenceSize" width="0.0" height="2"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="2" minY="1" maxX="2" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoInPhoneCell" id="RTb-w7-3eF" customClass="PhotoInPhoneCell">
+                                <rect key="frame" x="0.0" y="64" width="78" height="78"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="103" height="103"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="people_select@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ncw-ep-J7t">
+                                            <rect key="frame" x="77" y="2" width="24" height="25"/>
+                                        </imageView>
+                                        <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GI8-qY-e1a">
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="iPhotoPreviewImage" destination="GI8-qY-e1a" id="EIK-8I-QSy"/>
+                                    <outlet property="iSelectedImage" destination="Ncw-ep-J7t" id="XLQ-Ro-IZ1"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LQ5-8a-XhP">
+                            <rect key="frame" x="0.0" y="64" width="320" height="2"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="7ph-iO-YXa" id="3Bx-Rm-Spg"/>
+                            <outlet property="delegate" destination="7ph-iO-YXa" id="uOp-Hd-sc5"/>
+                        </connections>
+                    </collectionView>
+                    <toolbarItems>
+                        <barButtonItem title="重选" id="deh-Gd-Baz">
+                            <color key="tintColor" red="0.19215686274509802" green="0.41176470588235292" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didReselectButtonClick:" destination="7ph-iO-YXa" id="MiE-b0-EPq"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="rzf-09-Ep3"/>
+                        <barButtonItem style="plain" id="ocJ-jb-xlN">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="fBB-60-odQ"/>
+                        <barButtonItem title="确定" id="waF-Qp-aNu">
+                            <color key="tintColor" red="0.18823529411764706" green="0.33725490196078434" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didConfirmButtonClick:" destination="7ph-iO-YXa" id="fJd-uC-Pyx"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="IaO-a3-EoX"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="iConfirmButton" destination="waF-Qp-aNu" id="hfT-1F-9VB"/>
+                        <outlet property="iCountLabel" destination="ocJ-jb-xlN" id="2KS-xP-8JT"/>
+                        <outlet property="iReselectButton" destination="deh-Gd-Baz" id="ctg-pd-QYC"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iwL-EG-wig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="272" y="-744"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cQ7-hK-k7J">
+            <objects>
+                <navigationController storyboardIdentifier="PhotoAlbumsRoot" definesPresentationContext="YES" id="wTv-h1-arm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DLM-03-05r">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tqT-ah-Etk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-520" y="-744"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="people_select@3x.png" width="55" height="55"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+</document>

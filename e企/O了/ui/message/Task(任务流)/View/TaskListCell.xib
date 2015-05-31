@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskListCell" id="RJ4-6v-YoJ" customClass="TaskListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RJ4-6v-YoJ" id="wfC-oZ-vxW">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j6p-tg-oVs">
+                        <rect key="frame" x="8" y="18" width="12" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="12" id="ULf-jP-7H7"/>
+                            <constraint firstAttribute="height" constant="12" id="a7A-Da-tBO"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pc-RE-KwD">
+                        <rect key="frame" x="31" y="16" width="220" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="220" id="3QL-dx-Mj7"/>
+                            <constraint firstAttribute="height" constant="18" id="vxh-et-hRo"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxy-fY-cbc">
+                        <rect key="frame" x="277" y="19" width="28.5" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_time.png" translatesAutoresizingMaskIntoConstraints="NO" id="H4n-uA-BPa">
+                        <rect key="frame" x="260.5" y="20" width="12" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="7My-2T-Eu9"/>
+                            <constraint firstAttribute="width" constant="12" id="vel-Jl-hj0"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="H4n-uA-BPa" firstAttribute="top" secondItem="wfC-oZ-vxW" secondAttribute="top" constant="20" id="1xM-B0-Gw2"/>
+                    <constraint firstItem="0pc-RE-KwD" firstAttribute="top" secondItem="wfC-oZ-vxW" secondAttribute="top" constant="16" id="EnU-f4-E2H"/>
+                    <constraint firstAttribute="trailing" secondItem="jxy-fY-cbc" secondAttribute="trailing" constant="14" id="IZG-zR-fbd"/>
+                    <constraint firstItem="jxy-fY-cbc" firstAttribute="leading" secondItem="H4n-uA-BPa" secondAttribute="trailing" constant="5" id="Pmi-YL-YDV"/>
+                    <constraint firstItem="j6p-tg-oVs" firstAttribute="top" secondItem="wfC-oZ-vxW" secondAttribute="top" constant="18" id="PsC-nI-yr5"/>
+                    <constraint firstItem="j6p-tg-oVs" firstAttribute="leading" secondItem="wfC-oZ-vxW" secondAttribute="leading" constant="8" id="QWK-Nm-ETU"/>
+                    <constraint firstItem="0pc-RE-KwD" firstAttribute="leading" secondItem="j6p-tg-oVs" secondAttribute="trailing" constant="11" id="e0C-b1-AaT"/>
+                    <constraint firstItem="jxy-fY-cbc" firstAttribute="top" secondItem="wfC-oZ-vxW" secondAttribute="top" constant="19" id="yaF-YH-hGe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="completeImgView" destination="H4n-uA-BPa" id="mxD-xI-aSQ"/>
+                <outlet property="statusImgView" destination="j6p-tg-oVs" id="I8i-nN-BQE"/>
+                <outlet property="taskNameLabel" destination="0pc-RE-KwD" id="7gt-za-Z91"/>
+                <outlet property="timeLabel" destination="jxy-fY-cbc" id="hex-c4-6C5"/>
+            </connections>
+            <point key="canvasLocation" x="254" y="225"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_time.png" width="13" height="13"/>
+    </resources>
+</document>

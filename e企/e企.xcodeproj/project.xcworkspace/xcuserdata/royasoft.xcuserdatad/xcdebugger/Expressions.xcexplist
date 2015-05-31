@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[WriteMessageVC socket:didReadData:withTag:]:WriteMessageVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "resultDict">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MyWorkGroupViewController tableView:didSelectRowAtIndexPath:]:MyWorkGroupViewController.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

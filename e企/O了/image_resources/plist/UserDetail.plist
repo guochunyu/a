@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>fieldsSort</key>
+		<array>
+			<string>avatar</string>
+			<string>menberName</string>
+			<string>partName</string>
+			<string>reserve5</string>
+			<string>telNum</string>
+			<string>reserve10</string>
+			<string>shortNum</string>
+		</array>
+		<key>avatar</key>
+		<string>头像：</string>
+		<key>menberName</key>
+		<string>姓名：</string>
+		<key>partName</key>
+		<string>部门：</string>
+		<key>reserve5</key>
+		<string>职位：</string>
+		<key>telNum</key>
+		<string>移动电话：</string>
+		<key>reserve10</key>
+		<string>员工号：</string>
+		<key>shortNum</key>
+		<string>短号：</string>
+		<key>reserve9</key>
+		<string>邮箱地址：</string>
+	</dict>
+	<dict>
+		<key>fieldsSort</key>
+		<array>
+			<string>workArea</string>
+			<string>files</string>
+		</array>
+		<key>workArea</key>
+		<string>工作圈</string>
+		<key>files</key>
+		<string>文件</string>
+	</dict>
+</array>
+</plist>
